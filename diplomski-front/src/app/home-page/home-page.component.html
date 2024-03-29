@@ -1,0 +1,59 @@
+<header>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-blue">
+    <div class="container">
+      <a class="logo" href="#" routerLinkActive='active' [routerLink]="['/home-page']">GYM</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse  justify-content-end navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+
+          <li *ngIf="isAdmin()" class="nav-item">
+            <a class="link" style="color: #F19529;" (click)="openNewTrainingDialog()">Add new training</a>
+          </li>
+
+          <li *ngIf="isAdmin()" class="nav-item">
+            <a class="link" style="color: #ffff;" (click)="getAllUsers()">Users</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="link" routerLinkActive='active' [routerLink]="['/home-page']">Home</a>
+          </li>
+          <li *ngIf="isSimpleUser()" class="nav-item">
+            <a class="link" style="color: #ffff;" routerLinkActive='active' [routerLink]="['/user-profile']">Profile</a>
+          </li>
+          <!-- info -->
+          <li *ngIf="isSimpleUser()" class="nav-item"> 
+            <a class="link" style="color: #ffff;"  routerLinkActive='active' [routerLink]="['/about-us']">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="link" (click)="logout()" style="color: #ffff;">Log out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="container">
+
+    <div class="row">
+      <ul class="col col-lg-12 col-md-12 col-sm-12" id="buttons">
+        <li class="dayss" *ngFor="let weekTraining of weekTrainings" (click)="selectedDay(weekTraining)" [ngClass]="{active1 : isActive(weekTraining)}" >
+          <a>{{weekTraining.day}}
+            <br>
+            <small>{{weekTraining.date}}</small>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div *ngFor="let training of trainings">
+      <app-card [date]="date" [training]="training" (passNewTrainingDays)="updatedTrainingDays()"></app-card>
+    </div>
+
+
+  </div>
+</section>

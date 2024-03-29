@@ -1,0 +1,22 @@
+
+  @media only screen and (min-width: 768px){
+    .row .div1{
+        width: 28%;
+    }
+    .row .div2{
+        width: 16%;
+        margin-top: 17px;
+    }
+  }
+
+  .row{
+    margin-left: 0;
+  }
+
+  .small1{
+    color: #F19529;
+  }
+
+  .updateDelete{
+    margin-right: 5%;
+  }

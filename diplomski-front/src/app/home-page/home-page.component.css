@@ -1,0 +1,49 @@
+#buttons li {
+    float: left;
+    list-style: none;
+    text-align: center;
+    background-color: #21243B;
+    margin-right: 15px;
+    margin-left: 15px;
+    
+    line-height: 30px;
+    border-radius: 0.25rem;
+  }
+
+  #buttons li a {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    color: #FFFFFF;
+    display: block;
+  }
+  
+  #buttons li:hover {
+    text-decoration: none;
+    color: #000000;
+    background-color: #F19529;
+  }
+
+  .active1 a{
+    text-decoration: none;
+    color: #000000;
+    background-color: #F19529;
+    border-radius: 0.25rem;
+  }
+
+  @media (min-width: 240px) and (max-width: 768px) { 
+    .dayss{
+        width: 100%;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+ }
+
+ @media (min-width: 768px) and (max-width: 3000px) { 
+    .dayss{
+      width: 150px;
+      margin-bottom: 3px;
+  }
+}
+
+
